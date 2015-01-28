@@ -92,7 +92,6 @@ let g:_toggle_words_dict = {'*': [
     \ ['success', 'failure'], 
     \ ['true', 'false'],
     \ ['up', 'down'], 
-    \ ['left', 'right'],
     \ ['yes', 'no'], 
     \ ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'], 
     \ ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'], 
