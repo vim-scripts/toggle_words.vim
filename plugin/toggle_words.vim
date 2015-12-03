@@ -90,6 +90,8 @@ let g:_toggle_words_dict = {'*': [
     \ ['horizontal', 'vertical'], 
     \ ['left', 'right'],
     \ ['top', 'bottom'], 
+    \ ['front', 'back'], 
+    \ ['forward', 'backward'], 
     \ ['head', 'tail'], 
     \ ['width', 'height'], 
     \ ['min', 'max'], 
