@@ -1,15 +1,15 @@
 " toggle_words.vim
 " Author: Vincent Wang (linsong dot qizi at gmail dot com)
 " Created:  Fri Jun 29 18:06:29 CST 2007
-" Requires: Vim Ver7.0+ 
+" Requires: Vim Ver7.0+
 " Version:  1.5
 "
-" Documentation: 
+" Documentation:
 "   The purpose of this plugin is very simple, it can toggle words among
-"   'true'=>'false', 'True'=>'False', 'if'=>'elseif'=>'else'=>'endif' etc . 
+"   'true'=>'false', 'True'=>'False', 'if'=>'elseif'=>'else'=>'endif' etc .
 "
-"   To use it, move the cursor on some words like 'true', 'False', 'YES', etc, 
-"   call command 
+"   To use it, move the cursor on some words like 'true', 'False', 'YES', etc,
+"   call command
 "     :ToggleWord
 "
 "   It will toggle 'true'=>'false', 'False'=>'True', 'YES'=>'NO' etc. Yes,
@@ -17,17 +17,17 @@
 "   'True' will be toggled to 'False' instead of 'false'. Currently the way to
 "   check the case is very simple, but it works well for me.
 "
-"   You can define a map for 'ToggleWord' comand to make it easier: 
+"   You can define a map for 'ToggleWord' comand to make it easier:
 "     nmap ,t :ToggleWord<CR>
 "
 "   This script can search the candicate words to toggle based on
 "   current filetype, for example, you can put the following configuration
 "   into your .vimrc to define some words for python:
 "      let g:toggle_words_dict = {'python': [['if', 'elif', 'else']]}
-"   
+"
 "   There are some default words for toggling predefined in the
 "   script(g:_toogle_words_dict) that will work for all filetypes.
-"   Any comment, suggestion, bug report are welcomed. 
+"   Any comment, suggestion, bug report are welcomed.
 "
 " History:
 "  1.5:
@@ -41,11 +41,11 @@
 "    - fixed typo(november => novermber)
 "    - sorted and stacked the definitions to make them more readable/editable
 "    - added a few new definitions (allow/deny, min/max, before/after, block/inline/none, left/right)
-"    - add revision history 
+"    - add revision history
 "    - most of above changes come from Fergus Bremner, thanks Fergus!
 "
 "  1.1:
-"    - add a simple case sensitive support 
+"    - add a simple case sensitive support
 "
 "  1.0:
 "    - initial upload
@@ -54,12 +54,12 @@
 "  Fergus Bremner
 "  Jeremy Cantrell
 "
-"   Thanks! 
+"   Thanks!
 
 if v:version < 700
     "TODO: maybe I should make this script works under vim7.0
-    echo "This script required vim7.0 or above version." 
-    finish 
+    echo "This script required vim7.0 or above version."
+    finish
 endif
 
 if exists("g:load_toggle_words")
@@ -72,31 +72,32 @@ set cpo&vim
 let g:load_toggle_words = "1.5"
 
 let g:_toggle_words_dict = {'*': [
-    \ ['==', '!='], 
-    \ ['>', '<'], 
-    \ ['(', ')'], 
-    \ ['[', ']'], 
-    \ ['{', '}'], 
-    \ ['+', '-'], 
-    \ ['allow', 'deny'], 
-    \ ['before', 'after'], 
+    \ ['==', '!='],
+    \ ['>', '<'],
+    \ ['(', ')'],
+    \ ['[', ']'],
+    \ ['{', '}'],
+    \ ['+', '-'],
+    \ ['allow', 'deny'],
+    \ ['before', 'after'],
     \ ['block', 'inline', 'none'],
-    \ ['define', 'undef'], 
-    \ ['good', 'bad'], 
-    \ ['if', 'elseif', 'else', 'endif'], 
-    \ ['in', 'out'], 
+    \ ['define', 'undef'],
+    \ ['good', 'bad'],
+    \ ['if', 'elseif', 'else', 'endif'],
+    \ ['in', 'out'],
     \ ['left', 'right'],
-    \ ['min', 'max'], 
-    \ ['on', 'off'], 
-    \ ['start', 'stop'], 
-    \ ['success', 'failure'], 
+    \ ['min', 'max'],
+    \ ['on', 'off'],
+    \ ['start', 'stop'],
+    \ ['success', 'failure'],
     \ ['true', 'false'],
-    \ ['up', 'down'], 
+    \ ['up', 'down'],
     \ ['left', 'right'],
-    \ ['yes', 'no'], 
-    \ ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'], 
-    \ ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'], 
-    \ ['foo', 'bar', 'baz', 'qux', 'quux'], 
+    \ ['yes', 'no'],
+    \ ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
+    \ ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
+    \ ['foo', 'bar', 'baz', 'qux', 'quux'],
+    \ ['first', 'second', 'third', 'fourth'],
     \ ['1', '0'],
     \ [],
     \ ],  }
